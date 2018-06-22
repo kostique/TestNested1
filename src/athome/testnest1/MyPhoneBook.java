@@ -1,30 +1,30 @@
 package athome.testnest1;
 
-public class MyPhoneBook {
+import java.util.Arrays;
+import java.util.Comparator;
+
+class MyPhoneBook {
     private PhoneNumber[] PhoneNumbers = new PhoneNumber[10];
 
-    // add a new entry (PhoneNumber object) to PhoneNumbers array
-    public void addPhoneNumber(String name, String phone ){
-        for (int i = 1; i < PhoneNumbers.length; i++) {
+    void addPhoneNumber(String name, String phone ){
+        for (int i = 0; i < PhoneNumbers.length; i++) {
             if (PhoneNumbers[i] == null){
                 PhoneNumbers[i] = new PhoneNumber(name, phone);
                 break;
             }
         }
     }
-    // print out PhoneNumbers array
-    public void printPhoneNumber(){
-        for (int i = 1; i < PhoneNumbers.length; i++) {
+    void printPhoneNumber(){
+        for (int i = 0; i < PhoneNumbers.length; i++) {
             if (PhoneNumbers[i] == null) break;
             System.out.println(PhoneNumbers[i]);
         }
     }
 
-
     public static class PhoneNumber {
         private String name;
         private String phone;
-        public PhoneNumber(String name, String phone){
+        PhoneNumber(String name, String phone){
             this.name = name;
             this.phone = phone;
         }
@@ -49,5 +49,26 @@ public class MyPhoneBook {
         public String toString() {
             return "Name: " + name + ", phone: " + phone;
         }
+    }
+
+    public void sortByName(){
+        Comparator comparator = new Comparator<PhoneNumber>(){
+            public int compare(PhoneNumber pn1, PhoneNumber pn2){
+                if ((pn1.getName()).compareTo(pn2.getName()) > 0) return 1;
+                if ((pn1.getName()).compareTo(pn2.getName()) < 0) return -1;
+                return 0;
+            }
+        };
+        Arrays.sort(PhoneNumbers, comparator);
+    }
+    public void sortByPhone(){
+        Comparator comparator = new Comparator<PhoneNumber>(){
+            public int compare(PhoneNumber pn1, PhoneNumber pn2){
+                if ((pn1.getPhone()).compareTo(pn2.getPhone()) > 0) return 1;
+                if ((pn1.getPhone()).compareTo(pn2.getPhone()) < 0) return -1;
+                return 0;
+            }
+        };
+        Arrays.sort(PhoneNumbers, comparator);
     }
 }
