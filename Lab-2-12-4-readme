@@ -1,0 +1,14 @@
+1. No classes suggested (see Lab Work 2.12.4.Task) were taken to MyPhone.class as either nested or inner classes.
+The reason for this is that the classes with prefix "My..." are commonly used to operate User Profile Data such as:
+* User contacts (MyPhoneBook);
+* User files (MyDocuments, MyPictures, MyDownloads ...)
+* etc.
+
+2. Since all of the listed classes (see Lab Work 2.12.4.Task) are implementing separate devices, they were added to project as top-level
+classes.
+
+3. Classes Battery.class and BatteryCharger.class were grouped in a non-static context while BatteryCharger.class needs "full
+excess" to its outer class members. With reference to nested classes paradigm, BatteryCharger "cannot exist" without Battery as well.
+
+4. Unlike Battery and BatteryCharger classes, Headphones class was nested to PhoneSpeaker as these two classes implement
+two different devices but tend to share the same logic of sound stream playback, for instance.
