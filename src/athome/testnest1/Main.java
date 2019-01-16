@@ -10,5 +10,8 @@ public class Main {
 
         System.out.println("Master Branch is not here");
         System.out.println("You're in the other_branch");
+
+
+        System.out.println("This is the second changing of another_branch");
     }
 }
