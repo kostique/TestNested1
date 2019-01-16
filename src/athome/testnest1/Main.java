@@ -6,5 +6,8 @@ public class Main {
         MyPhone myPhone = new MyPhone();
         myPhone.switchOn();
         myPhone.call(4); //Dialing Vital'ka
+
+
+        System.out.println("Master Branch is here");
     }
 }
