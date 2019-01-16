@@ -8,6 +8,7 @@ public class Main {
         myPhone.call(4); //Dialing Vital'ka
 
 
-        System.out.println("Master Branch is here");
+        System.out.println("Master Branch is not here");
+        System.out.println("You're in the other_branch");
     }
 }
